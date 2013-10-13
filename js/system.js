@@ -98,13 +98,12 @@
           columns = system.mesh.vertices[row].length;
 
       for (column; column < columns - 1; column += 1) {
-        var vertex0 = system.mesh.vertices[row][column],
-            vertex1 = system.mesh.vertices[row][column + 1],
-            vertex2 = system.mesh.vertices[row + 1][column + 1],
+        var vertex1 = system.mesh.vertices[row][column],
+            vertex2 = system.mesh.vertices[row][column + 1],
             vertex3 = system.mesh.vertices[row + 1][column];
 
-        vertex0.x += Math.sin(now * vertex0.time);
-        vertex0.y += Math.cos(now * vertex0.time);
+        vertex1.x += Math.sin(now * vertex1.time);
+        vertex1.y += Math.cos(now * vertex1.time);
 
         context.moveTo(vertex1.x, vertex1.y);
         context.lineTo(vertex2.x, vertex2.y);

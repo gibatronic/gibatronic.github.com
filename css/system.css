@@ -44,6 +44,14 @@ html {
   height: 50%;
 }
 
+.panel-header canvas {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
 .panel-header h1 {
   position: relative;
   top: 10px;

@@ -78,6 +78,7 @@
   system.mesh.context = null;
   system.mesh.height = 100;
   system.mesh.lineWidth = 1;
+  system.mesh.radius = 20;
   system.mesh.speed = 0.002;
   system.mesh.strokeOpacity = 0;
   system.mesh.strokeStyle = "rgba(204, 204, 204, " + system.mesh.strokeOpacity + ")";
@@ -102,8 +103,8 @@
             vertex2 = system.mesh.vertices[row][column + 1],
             vertex3 = system.mesh.vertices[row + 1][column];
 
-        vertex1.x += Math.sin(now * vertex1.time);
-        vertex1.y += Math.cos(now * vertex1.time);
+        vertex1.x = vertex1.original.x + (Math.sin(now * vertex1.time) * system.mesh.radius * vertex1.xRange);
+        vertex1.y = vertex1.original.y + (Math.cos(now * vertex1.time) * system.mesh.radius * vertex1.yRange);
 
         context.moveTo(vertex1.x, vertex1.y);
         context.lineTo(vertex2.x, vertex2.y);
@@ -128,7 +129,14 @@
     this.x = options.x || 0;
     this.y = options.y || 0;
 
+    this.original = {
+      x: this.x,
+      y: this.y
+    }
+
     this.time = 1 + Math.random();
+    this.xRange = 0.5 + (Math.random() * 1.25);
+    this.yRange = 0.5 + (Math.random() * 1.25);
   }
 
   window.onload = system;

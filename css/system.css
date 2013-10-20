@@ -1,39 +1,120 @@
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../font/fontawesome-webfont.eot?v=3.2.1");
+  src: url("../font/fontawesome-webfont.eot?#iefix&v=3.2.1") format("embedded-opentype"), url("../font/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("../font/fontawesome-webfont.ttf?v=3.2.1") format("truetype"), url("../font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  font-family: Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
   line-height: 1.618em;
   margin: 0px;
   height: 100%;
 }
 
-h1, p {
+h1, h2, p {
   line-height: 1.618em;
   margin: 0px;
 }
 
-h1 {
+h1, h2 {
   font-family: Georgia, serif;
-  font-size: 3em;
   font-weight: normal;
-  text-transform: lowercase;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
 }
 
 html {
   height: 100%;
 }
 
+p {
+  text-align: justify;
+}
+
 [class|="panel"] {
   position: relative;
   display: block;
   width: 100%;
+}
+
+[class|="title"] {
+  color: rgb(235, 183, 67);
+}
+
+[class|="title"]:first-letter {
+  text-transform: lowercase;
+}
+
+.panel-about {
+  background-color: rgb(65, 65, 68);
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 0px rgb(0, 0, 0);
+  min-height: 100%;
+}
+
+.panel-about ::selection {
+  background-color: rgba(0, 0, 0, 0.4);
+  text-shadow: none;
+}
+
+.panel-about ::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.4);
+  text-shadow: none;
+}
+
+.panel-about canvas {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
   height: 100%;
+}
+
+.panel-about section {
+  margin: 0px auto 0px auto;
+  padding-bottom: 64px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.panel-about .section-about {
+  padding-left: 138px;
+  padding-top: 64px;
+}
+
+.panel-about .section-skills {
+  padding-left: 74px;
 }
 
 .panel-header {
   background-color: rgb(255, 255, 255);
   text-align: center;
+  height: 100%;
+}
+
+.panel-header ::selection {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.panel-header ::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .panel-header:before {
@@ -60,6 +141,7 @@ html {
   line-height: 13px;
   padding: 0px 0px 8px 0px;
   text-align: left;
+  text-transform: lowercase;
   vertical-align: middle;
 }
 

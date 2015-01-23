@@ -1,0 +1,19 @@
+{
+  "cache_control": {
+    "css/**": 86400,
+    "img/**": 86400,
+    "js/**": 86400,
+    "index.htm": 86400
+  },
+  "clean_urls": true,
+  "exclude": [
+    ".gitignore",
+    "divshot.json",
+    "readme.md"
+  ],
+  "name": "gibatronic",
+  "root": ".",
+  "routes": {
+    "**": "index.htm"
+  }
+}
